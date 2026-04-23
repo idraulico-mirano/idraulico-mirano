@@ -233,3 +233,11 @@ footer {
 .seo-text {
   text-align: center;
 }
+
+/* BOTTONE */
+.cta-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
