@@ -110,14 +110,19 @@
   <div class="container">
     <h2>Invia la tua richiesta</h2>
 
-    <form>
+    <!-- NOTIFICA STATO SERVIZIO -->
+    <div class="form-notice">
+      Il servizio di richiesta intervento sarà attivo a breve.
+    </div>
+
+    <form class="form-disabled">
 
       <input type="text" name="nome" placeholder="Nome" required>
       <input type="tel" name="telefono" placeholder="Telefono" required>
       <textarea name="messaggio" placeholder="Descrivi il problema" required></textarea>
 
       <label class="privacy">
-        <input type="checkbox" required>
+        <input type="checkbox" disabled>
 
         Dichiaro di aver letto e compreso l’
         <a href="privacy-policy.html" target="_blank">Informativa Privacy</a>
@@ -125,7 +130,7 @@
         inclusa la comunicazione a professionisti terzi per la gestione della richiesta.
       </label>
 
-      <button type="submit">Invia richiesta</button>
+      <button type="submit" disabled>Invia richiesta</button>
 
     </form>
   </div>

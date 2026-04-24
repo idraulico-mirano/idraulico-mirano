@@ -241,3 +241,19 @@ footer {
   justify-content: center;
   margin: 40px 0;
 }
+
+/* FORM SETTEMBRE 2026 */
+.form-notice {
+  background: #fff3cd;
+  color: #856404;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #ffeeba;
+}
+
+.form-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
