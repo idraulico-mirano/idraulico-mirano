@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog Idraulico Mirano</title>
+<meta name="description" content="Consigli utili su perdite d'acqua, scarichi e problemi idraulici a Mirano.">
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">Idraulico Mirano</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Blog idraulico</h1>
+    <p>Guide pratiche per risolvere problemi comuni</p>
+  </div>
+</section>
+
+<!-- BLOG LIST -->
+<section class="servizi">
+  <div class="container">
+    <h2>Articoli</h2>
+
+    <div class="grid" id="blog-list"></div>
+  </div>
+</section>
+
+<footer>
+  <p>Servizio di messa in contatto con idraulici a Mirano.</p>
+</footer>
+
+<script>
+fetch("https://api.github.com/repos/idraulico-mirano/idraulico-mirano/contents/blog")
+  .then(r => r.json())
+  .then(files => {
+    const container = document.getElementById("blog-list");
+
+    files
+      .filter(file => file.name.endsWith(".html"))
+      .forEach(file => {
+
+        const title = file.name
+          .replace(".html", "")
+          .replace(/-/g, " ");
+
+        const card = document.createElement("a");
+        card.href = file.name; // IMPORTANTE perché sei dentro /blog/
+        card.className = "card";
+
+        card.innerHTML = `
+          <img src="../img/hero-idraulico.jpg" alt="">
+          <h3>${title}</h3>
+          <p>Leggi l'articolo</p>
+        `;
+
+        container.appendChild(card);
+      });
+  });
+</script>
+
+</body>
+</html>
