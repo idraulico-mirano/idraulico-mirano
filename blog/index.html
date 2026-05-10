@@ -46,7 +46,7 @@ fetch("https://api.github.com/repos/idraulico-mirano/idraulico-mirano/contents/b
     const container = document.getElementById("blog-list");
 
     files
-      .filter(file => file.name.endsWith(".html"))
+      .filter(file => file.name.endsWith(".html") && file.name !== "index.html")
       .forEach(file => {
 
         const title = file.name
